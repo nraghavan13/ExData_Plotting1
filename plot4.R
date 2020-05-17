@@ -18,16 +18,16 @@ plotData$Date <- as.Date(plotData$Date, format = "%d/%m/%Y")
 subset <- subset(plotData, subset = (Date >= "2007-02-01" & Date <= "2007-02-02"))
 setDateTime <- strptime(paste(subset$Date, subset$Time), "%Y-%m-%d %H:%M:%S")
 
-#Gets "Global_active_power" of data from subset
+#Gets "Global_active_power" data from subset
 globalActivePowerData <- as.numeric(subset$Global_active_power)
 
-#Gets "Global_reactive_power" of data from subset
+#Gets "Global_reactive_power" data from subset
 globalReactivePowerData <- as.numeric(subset$Global_reactive_power)
 
-#Gets "Voltage" of data from subset
+#Gets "Voltage" data from subset
 voltageData <- as.numeric(subset$Voltage)
 
-#Get sub-metering data for energy from subset
+#Get "Sub_metering_1", "Sub_metering_2", and "Sub_metering_1" data from subset
 subMetering1Data <- as.numeric(subset$Sub_metering_1)
 subMetering2Data <- as.numeric(subset$Sub_metering_2)
 subMetering3Data <- as.numeric(subset$Sub_metering_3)
@@ -52,6 +52,5 @@ legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=
 
 #Global Active Power Plot
 plot(setDateTime, globalReactivePowerData, type="l", xlab="", ylab="Global_reactive_power")
-
 
 dev.off()
