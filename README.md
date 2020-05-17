@@ -1,4 +1,4 @@
-#ExData_Plotting1
+# ExData_Plotting1
 
 Repository for Exploratory Data Analysis Course Project 1.
 
